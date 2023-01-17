@@ -9,9 +9,9 @@ type Child2Props = {
 };
 function Child2Component(props: Child2Props) {
   // UseState For Taking Input From User
-  const [input, setInput] = useState<string | number>("");
+  const [input, setInput] = useState<string | "">("");
   //   Display State For showing result
-  const [display, setDisplay] = useState<string | number>("");
+  const [display, setDisplay] = useState<string | "">("");
   //   Input Handler Function
   const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInput(e.target.value);
@@ -67,7 +67,9 @@ function Child2Component(props: Child2Props) {
           Submit
         </button>
         <br></br>
-        {display}
+        <br></br>
+        <br></br>
+        {display !== "" ? <span className="display">{display}</span> : null}
       </div>
     </div>
   );
